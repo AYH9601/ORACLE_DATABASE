@@ -66,7 +66,7 @@
             </div>
 
             <div class="tag2">
-                <h2>행 추가</h2>
+                <h2>행 추가, CREATE</h2>
                 <p>
                     INSERT INTO topic <br>
                     &emsp;   (id,title,description,created) <br>
@@ -82,6 +82,60 @@
                 <p>
                     Structured Query Language.<br>
                     구조화된 정보를 처리하도록 요청하는 컴퓨팅 언어.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>행 읽기, Read</h2>
+                <p>
+                    전체 읽기 <br>
+                    SELECT * FROM topic; <br>
+                    특정 열 값만 읽기 <br>
+                    SELECT id, title, created FROM topic; <br>
+                    특정 행 값만 읽기 <br>
+                    SELECT * FROM topic WHERE id = 1; <br>
+                    SELECT * FROM topic WHERE id > 1; <br>
+                    특정 행렬만 읽기(가로 세로 모두 필터링) <br>
+                    SELECT id, title, created FROM topic WHERE id = 1;
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>정렬</h2>
+                <p>
+                    높은 숫자부터 정렬 <br>
+                    SELECT * FROM topic ORDER BY id DESC; <br>
+                    낮은 숫자부터 정렬 <br>
+                    SELECT * FROM topic ORDER BY id ASC; <br>
+                    숫자로 할꺼면 id, 타이틀로 할꺼면 title로 하면 되며 알파벳 순서로 DESC, ASC를 따른다.<br>
+                    SELECT * FROM topic <br>
+                    &emsp;    OFFSET 1 ROWS <br>
+                    &emsp;    FETCH NEXT 2 ROWS ONLY; <br>
+                    OFFSET - 특정 행의 "다음" 부터 출력. <br>
+                    FETCH - 다음 [num] 개의 행만 출력
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>행 수정, UPDATE</h2>
+                <p>
+                    UPDATE topic <br>
+                    &emsp;        SET<br>
+                    &emsp;&emsp;            title = 'MSSQL',<br>
+                    &emsp;&emsp;           description = 'MSSQL is...'<br>
+                    &emsp;        WHERE<br>
+                    &emsp;&emsp;            id = 3;<br>
+                    무엇을 수정할지가 SET에 먼저 나온 뒤, 어디에 있는걸 수정할지 주소값을 입력해줘야한다. <br>
+                    UPDATE와 DELETE는 무언가 바뀌는 행위 이므로 수정한 뒤 commit;을 해줘야 반영된다. <br>
+                    수정과 삭제는 매우매우 위험한 작업이므로 굉장히 주의깊게 해야한다.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>행 삭제, DELETE</h2>
+                <p>
+                    DELETE FROM topic WHERE id = 3; <br>
+                    특정한 행을 삭제하는 것. 만약 WHERE id를 지정해주지 않으면 모든 데이터가 날라가버려서 큰일이 발생한다.
                 </p>
             </div>
         </div>

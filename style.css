@@ -29,19 +29,22 @@ header h1 {
 
 section {
   padding: 30px;
+  background-color: rgb(51, 33, 22);
 }
 
 .tag1 h1 {
+  color: #fff;
   font-family: "orbitron";
   margin-bottom: 30px;
   letter-spacing: 3px;
 }
 
 .tag2 {
+  background-color: #fff;
   letter-spacing: 1px;
   padding: 15px;
   width: 60%;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   margin-bottom: 30px;
 }
 .tag2 h2 {
