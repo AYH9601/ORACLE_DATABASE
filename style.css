@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Orbitron&family=Poppins:wght@200&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +23,8 @@ header h1 {
   font-size: 35px;
   text-align: center;
   color: crimson;
+  font-family: "poppins";
+  letter-spacing: 10px;
 }
 
 section {
@@ -29,12 +32,19 @@ section {
 }
 
 .tag1 h1 {
+  font-family: "orbitron";
   margin-bottom: 30px;
+  letter-spacing: 3px;
 }
 
 .tag2 {
+  letter-spacing: 1px;
   padding: 15px;
   width: 60%;
   border: 1px solid #000;
   margin-bottom: 30px;
+}
+.tag2 h2 {
+  font-family: "poppins";
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

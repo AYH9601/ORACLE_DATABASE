@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>ORACLE</h1>
+        <h1>ORACLE DATABASE</h1>
     </header>
     <section>
         <div class="tag1 220624">
@@ -32,10 +32,10 @@
                     <br>
                     사용자 <br>
                     CREATE USER [ID] IDENTIFIED BY [PWD] <br>
-                    그러나 생성이 안될경우 alter session set "_ORACLE_SCRIPT"=true; 명령어를 실행하여 세션을 변경해준다. <br>
-                    이후 사용자 계정에 권한을 부여해줘야 계정을 사용할 수 있게 된다.  <br>
+                    그러나 생성이 안될경우 alter session set "_ORACLE_SCRIPT"=true; 명령어를 실행하여 세션을 변경해준다. ORACLE 11g 에서 사용하는 방법임. <br>
+                    이후 생성된 사용자 계정에 권한을 부여해줘야 계정을 사용할 수 있게 된다.  <br>
                     우선 관리자로 로그인한 뒤 GRANT DBA TO [ID]; 를 하면 권한을 줄 수 있다. <br>
-                    그러나 데이터베이스는 관리자와 사용자의 권한을 나눠서 이원화시켜 관리하는것이 바람직하기때문에 DBA라는 최상위 권한을 주는것은 옳지 않다. <br>
+                    중간의 DBA는 어떤 권한을 줄지를 선택해주는 단어이다. 데이터베이스는 관리자와 사용자의 권한을 나눠서 이원화시켜 관리하는것이 바람직하기때문에 DBA라는 최상위 권한을 주는것은 옳지 않지만, 여기서는 공부를 위해 사용하므로 DBA라는 높은 권한을 주었다. <br>
                 </p>
             </div>
 
@@ -60,7 +60,28 @@
             <div class="tag2">
                 <h2>생성된 테이블 확인</h2>
                 <p>
+                    테이블을 선택하는 방법 <br>
                     SELECT table_name FROM all_tables WHERE OWNER = 'AYH'
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>행 추가</h2>
+                <p>
+                    INSERT INTO topic <br>
+                    &emsp;   (id,title,description,created) <br>
+                    &emsp;   VALUES <br>
+                    &emsp;   (1,'ORACLE','ORACLE is ...',SYSDATE); <br>
+                    
+                    이후 commit; 을 해줘야함. commit을 하지 않으면 행을 몇개를 추가하든 실제로 반영이 되지는 않음. 깃허브의 psuh를 생각해보자.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>SQL</h2>
+                <p>
+                    Structured Query Language.<br>
+                    구조화된 정보를 처리하도록 요청하는 컴퓨팅 언어.
                 </p>
             </div>
         </div>
