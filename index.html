@@ -11,28 +11,59 @@
     <header>
         <h1>ORACLE</h1>
     </header>
-    <div class="tag1">
-        <h1>220624</h1>
-        <div class="tag2">
-            <h2>Schema</h2>
-            <p>서로 연관된 표들을 그룹핑하는 일종의 디렉토리. (스키마에 속한 표들이 어떤 정보를 갖는지 설명하는 것.)</p>
+    <section>
+        <div class="tag1 220624">
+            <h1>220624</h1>
 
-            <h2>사용자 생성</h2>
-            <p>
-                관리자. System As System DataBase Admin <br>
-                cmd 창에서 sqlplus를 입력하여 오라클을 실행 후, <br>
-                sys AS SYSDBA 후 엔터 하면 password 입력하라고 뜨는데 그냥 비워두고 다시 Enter 눌러도됨 <br>
+            <div class="tag2">
+                <h2>Schema</h2>
+                <p>
+                    서로 연관된 표들을 그룹핑하는 일종의 디렉토리. (스키마에 속한 표들이 어떤 정보를 갖는지 설명하는 것.)
+                </p>
+            </div>
 
-                <br>
-                사용자 <br>
-                CREATE USER [ID] IDENTIFIED BY [PWD] <br>
-                그러나 생성이 안될경우 alter session set "_ORACLE_SCRIPT"=true; 명령어를 실행하여 세션을 변경해준다. <br>
-                이후 사용자 계정에 권한을 부여해줘야 계정을 사용할 수 있게 된다.  <br>
-                우선 관리자로 로그인한 뒤 GRANT DBA TO [ID]; 를 하면 권한을 줄 수 있다. <br>
-                그러나 데이터베이스는 관리자와 사용자의 권한을 나눠서 이원화시켜 관리하는것이 바람직하기때문에 DBA라는 최상위 권한을 주는것은 옳지 않다. <br>
+            <div class="tag2">
+                <h2>관리자 및 사용자 생성</h2>
+                <p>
+                    관리자. System As System DataBase Admin <br>
+                    cmd 창에서 sqlplus를 입력하여 오라클을 실행 후, <br>
+                    sys AS SYSDBA 후 엔터 하면 password 입력하라고 뜨는데 그냥 비워두고 다시 Enter 눌러도됨 <br>
+    
+                    <br>
+                    사용자 <br>
+                    CREATE USER [ID] IDENTIFIED BY [PWD] <br>
+                    그러나 생성이 안될경우 alter session set "_ORACLE_SCRIPT"=true; 명령어를 실행하여 세션을 변경해준다. <br>
+                    이후 사용자 계정에 권한을 부여해줘야 계정을 사용할 수 있게 된다.  <br>
+                    우선 관리자로 로그인한 뒤 GRANT DBA TO [ID]; 를 하면 권한을 줄 수 있다. <br>
+                    그러나 데이터베이스는 관리자와 사용자의 권한을 나눠서 이원화시켜 관리하는것이 바람직하기때문에 DBA라는 최상위 권한을 주는것은 옳지 않다. <br>
+                </p>
+            </div>
 
-            </p>
+            <div class="tag2">
+                <h2>Table 생성</h2>
+                <p>
+                    CREATE TABLE topic ( <br>
+                    &emsp;    id  NUMBER NOT NULL, <br>
+                    &emsp;    title VARCHAR2(50) NOT NULL, <br>
+                    &emsp;    description VARCHAR2(4000) NULL, <br>
+                    &emsp;    created DATE NOT NULL <br>
+                    ); <br>
+                    설명 <br>
+                    NUMBER - 숫자만 들어옴  <br>
+                    VARCHAR2(num) - 괄호안의 글자수 까지만 문자열이 들어옴  <br>
+                    DATA - 날짜가 들어오는 ORACLE 구문. <br>
+                    NOT NULL - 비어있어선 안된다.   <br>
+                    NULL - 비어있어도 된다. 이 경우에 그냥 NULL도 안써도됨. <br>
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>생성된 테이블 확인</h2>
+                <p>
+                    SELECT table_name FROM all_tables WHERE OWNER = 'AYH'
+                </p>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
