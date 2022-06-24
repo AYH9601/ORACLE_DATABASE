@@ -138,6 +138,36 @@
                     특정한 행을 삭제하는 것. 만약 WHERE id를 지정해주지 않으면 모든 데이터가 날라가버려서 큰일이 발생한다.
                 </p>
             </div>
+
+            <div class="tag2">
+                <h2>테이블 통째로 삭제</h2>
+                <p>
+                    DROP TABLE topic; <br>
+                    테이블을 전부 삭제하고 나서는 commit;을 해줄 필요는 없다.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>PRIMARY KEY. 고유값</h2>
+                <p>
+                    CREATE TABLE topic ( <br>
+                    &emsp;    id  NUMBER NOT NULL, <br>
+                    &emsp;    title VARCHAR2(50) NOT NULL, <br>
+                    &emsp;    description VARCHAR2(4000) NULL, <br>
+                    &emsp;    created DATE NOT NULL <br>
+                    &emsp;    CONSTRAINT PK_TOPIC PRIMARY KEY(원하는거 id, title 등등) <br>
+                    ); <br>
+                    예를들어 id에 PK_TOPIC이라 명명한 PRIMARY KEY를 설정하면 고유한 귀속이 걸려서 같은 넘버로는 행을 추가 할 수 없다. <br>
+                    PRIMARY KEY를 지정한 값을 통해 자료를 찾으면 검색 속도가 매우매우 빠르다.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>SEQUENCE</h2>
+                <p>
+                    
+                </p>
+            </div>
         </div>
     </section>
 </body>
