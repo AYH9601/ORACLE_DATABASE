@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORACLE DATABASE Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ORACLE</h1>
+    </header>
+    <div class="tag1">
+        <h1>220624</h1>
+        <div class="tag2">
+            <h2>Schema</h2>
+            <p>서로 연관된 표들을 그룹핑하는 일종의 디렉토리. (스키마에 속한 표들이 어떤 정보를 갖는지 설명하는 것.)</p>
+
+            <h2>사용자 생성</h2>
+            <p>
+                관리자. System As System DataBase Admin <br>
+                cmd 창에서 sqlplus를 입력하여 오라클을 실행 후, <br>
+                sys AS SYSDBA 후 엔터 하면 password 입력하라고 뜨는데 그냥 비워두고 다시 Enter 눌러도됨 <br>
+
+                <br>
+                사용자 <br>
+                CREATE USER [ID] IDENTIFIED BY [PWD] <br>
+                그러나 생성이 안될경우 alter session set "_ORACLE_SCRIPT"=true; 명령어를 실행하여 세션을 변경해준다. <br>
+                이후 사용자 계정에 권한을 부여해줘야 계정을 사용할 수 있게 된다.  <br>
+                우선 관리자로 로그인한 뒤 GRANT DBA TO [ID]; 를 하면 권한을 줄 수 있다. <br>
+                그러나 데이터베이스는 관리자와 사용자의 권한을 나눠서 이원화시켜 관리하는것이 바람직하기때문에 DBA라는 최상위 권한을 주는것은 옳지 않다. <br>
+
+            </p>
+        </div>
+    </div>
+</body>
+</html>
