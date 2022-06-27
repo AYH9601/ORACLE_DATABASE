@@ -163,21 +163,23 @@
                     만약 id에 PK를 지정하고 1번에 값을 다시 INSERT 하면 무결성제약조건에 위배된다는 메세지가 뜨면서 추가가 되지 않는다. 
                 </p>
             </div>
-
-            <div class="tag2">
-                <h2>SEQUENCE</h2>
-                <p>
-                    
-                </p>
-            </div>
         </div>
 
         <div class="tag1 220627">
             <h1>220627</h1>
 
             <div class="tag2">
-                <h2></h2>
-                <p></p>
+                <h2>SEQUENCE</h2>
+                <p>
+                    자동적으로 값을 부여해주는 기능.<br>
+                    예를 들어 id값을 PRIMARY KEY 기능으로 부여를 해주었을때 새로 데이터를 INSERT 할 때 마다 <br>
+                    자동적으로 가장 높은값으로 부여해주는 기능이다. 즉 PRIMARY KEY 기능과 한 세트로 동작한다.<br>
+                    CREATE SEQUENCE [NAME]; 을 입력하여 시퀀스를 생성한 후 INSERT 명령문의 id값 또는 원하는 부분에<br>
+                    [NAME].NEXTVAL 을 입력해주면 자동으로 id값이 가장 높은 값으로 부여되는 명령문이 완성된다. <br>
+                    1을 더하면서 높여주는 값, 10을 더하면서 높여주는 값 등 다양한 옵션을 이용할 수 있음. <br>
+                    만약 현재 시퀀스의 가장 높은 값을 알고 싶으면 SELECT SEQ_topicPRIM.CURRVAL FROM DUAL; 을 명령하면 알 수 있음. <br>
+                    SELECT SEQ_topicPRIM.CURRVAL FROM topicPRIM; 을 사용해도 알 수 있지만 시퀀스의 값 만큼의 행이 생성되므로 그냥 DUAL이 편하다.
+                </p>
             </div>
         </div>
     </section>
