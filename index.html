@@ -12,6 +12,7 @@
         <!-- <h1>ORACLE DATABASE</h1> -->
         <div class="logo"></div>
     </header>
+
     <section>
         <div class="tag1 220624">
             <h1>220624</h1>
@@ -67,7 +68,7 @@
             </div>
 
             <div class="tag2">
-                <h2>행 추가, CREATE</h2>
+                <h2 class="redline">행 추가, CREATE</h2>
                 <p>
                     INSERT INTO topic <br>
                     &emsp;   (id,title,description,created) <br>
@@ -87,7 +88,7 @@
             </div>
 
             <div class="tag2">
-                <h2>행 읽기, Read</h2>
+                <h2 class="redline">행 읽기, Read</h2>
                 <p>
                     전체 읽기 <br>
                     SELECT * FROM topic; <br>
@@ -118,7 +119,7 @@
             </div>
 
             <div class="tag2">
-                <h2>행 수정, UPDATE</h2>
+                <h2 class="redline">행 수정, UPDATE</h2>
                 <p>
                     UPDATE topic <br>
                     &emsp;        SET<br>
@@ -133,7 +134,7 @@
             </div>
 
             <div class="tag2">
-                <h2>행 삭제, DELETE</h2>
+                <h2 class="redline">행 삭제, DELETE</h2>
                 <p>
                     DELETE FROM topic WHERE id = 3; <br>
                     특정한 행을 삭제하는 것. 만약 WHERE id를 지정해주지 않으면 모든 데이터가 날라가버려서 큰일이 발생한다.
@@ -173,7 +174,7 @@
                 <p>
                     자동적으로 값을 부여해주는 기능.<br>
                     예를 들어 id값을 PRIMARY KEY 기능으로 부여를 해주었을때 새로 데이터를 INSERT 할 때 마다 <br>
-                    자동적으로 가장 높은값으로 부여해주는 기능이다. 즉 PRIMARY KEY 기능과 한 세트로 동작한다.<br>
+                    자동적으로 가장 높은값으로 부여해주는 기능이다. 즉, PRIMARY KEY 기능과 한 세트로 동작한다.<br>
                     CREATE SEQUENCE [NAME]; 을 입력하여 시퀀스를 생성한 후 INSERT 명령문의 id값 또는 원하는 부분에<br>
                     [NAME].NEXTVAL 을 입력해주면 자동으로 id값이 가장 높은 값으로 부여되는 명령문이 완성된다. <br>
                     1을 더하면서 높여주는 값, 10을 더하면서 높여주는 값 등 다양한 옵션을 이용할 수 있음. <br>
@@ -181,7 +182,29 @@
                     SELECT SEQ_topicPRIM.CURRVAL FROM topicPRIM; 을 사용해도 알 수 있지만 시퀀스의 값 만큼의 행이 생성되므로 그냥 DUAL이 편하다.
                 </p>
             </div>
+
+            <div class="tag2">
+                <h2>분해</h2>
+                <p>
+                    데이터를 다룰때는 이를 쪼개서 분산시킬 수 있다. 특정 분류를 코드화해서 보관하면 추후에 엄청난 양의 데이터를 수정해야하는 상황이 발생할 때, <br>
+                    매우 간편하게 이를 동시에 전부 바꿀 수 있게 되므로 분류와 조합을 잘 하는것이 중요하다.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>조립, Join</h2>
+                <p>
+                    데이터를 분해해두면 추후 관리하기는 좋지만 표를 보기에는 좋지 않다. 그러므로 이를 조립을 해서 보여주면 관리의 용이함과 표의 직관성을 둘 다 잡을 수 있다. <br>
+                    SELECT * FROM topic LEFT JOIN author ON topic.author_id = author.id; <br>
+                    왼쪽에 topic을, 오른쪽에 author표를 배치하는 것. topic의 author_id와 author의 id가 같은 것을 매칭시켜서 왼쪽과 오른쪽에 각기 배치하는 방법이다. <br>
+                    이러한 Relation 기능들 덕에 지난 수십년간 ORACLE과 같은 관계형 데이터베이스가 컴퓨터공학을 지배할 수 있었다.
+                </p>
+            </div>
         </div>
     </section>
+
+    <footer>
+        <h1>ORACLE DATABASE</h1>
+    </footer>
 </body>
 </html>
