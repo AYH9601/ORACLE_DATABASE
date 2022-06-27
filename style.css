@@ -26,6 +26,15 @@ header h1 {
   font-family: "poppins";
   letter-spacing: 10px;
 }
+header .logo {
+  margin: 0 auto;
+  width: 200px;
+  height: 90px;
+  background-image: url(../img/oracleLogo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 section {
   padding: 30px;

@@ -20,6 +20,16 @@ header {
         font-family: "poppins";
         letter-spacing: 10px;
     }
+
+    .logo {
+        margin: 0 auto;
+        width: 200px;
+        height: 90px;
+        background-image: url(../img/oracleLogo.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 section {

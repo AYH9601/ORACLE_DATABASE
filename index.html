@@ -9,7 +9,8 @@
 </head>
 <body>
     <header>
-        <h1>ORACLE DATABASE</h1>
+        <!-- <h1>ORACLE DATABASE</h1> -->
+        <div class="logo"></div>
     </header>
     <section>
         <div class="tag1 220624">
@@ -111,7 +112,7 @@
                     SELECT * FROM topic <br>
                     &emsp;    OFFSET 1 ROWS <br>
                     &emsp;    FETCH NEXT 2 ROWS ONLY; <br>
-                    OFFSET - 특정 행의 "다음" 부터 출력. <br>
+                    OFFSET - 특정 행의 "다음" 부터 출력. 즉 OFFSET 1을 하면 2부터 출력됨. <br>
                     FETCH - 다음 [num] 개의 행만 출력
                 </p>
             </div>
@@ -158,7 +159,8 @@
                     &emsp;    CONSTRAINT PK_TOPIC PRIMARY KEY(원하는거 id, title 등등) <br>
                     ); <br>
                     예를들어 id에 PK_TOPIC이라 명명한 PRIMARY KEY를 설정하면 고유한 귀속이 걸려서 같은 넘버로는 행을 추가 할 수 없다. <br>
-                    PRIMARY KEY를 지정한 값을 통해 자료를 찾으면 검색 속도가 매우매우 빠르다.
+                    PRIMARY KEY를 지정한 값을 통해 자료를 찾으면 검색 속도가 매우매우 빠르다. <br>
+                    만약 id에 PK를 지정하고 1번에 값을 다시 INSERT 하면 무결성제약조건에 위배된다는 메세지가 뜨면서 추가가 되지 않는다. 
                 </p>
             </div>
 
@@ -167,6 +169,15 @@
                 <p>
                     
                 </p>
+            </div>
+        </div>
+
+        <div class="tag1 220627">
+            <h1>220627</h1>
+
+            <div class="tag2">
+                <h2></h2>
+                <p></p>
             </div>
         </div>
     </section>
