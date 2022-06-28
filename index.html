@@ -9,9 +9,13 @@
     <link rel="icon" href="img/favicon.ico">
 </head>
 <body>
-    <header>
+    <header class="headerTop">
         <!-- <h1>ORACLE DATABASE</h1> -->
         <div class="logo"></div>
+    </header>
+
+    <header class="headerBot">
+        <a href="https://chlee21.tistory.com/69" target="_blank">WORK</a>
     </header>
 
     <section>
@@ -214,6 +218,20 @@
                     1을 더하면서 높여주는 값, 10을 더하면서 높여주는 값 등 다양한 옵션을 이용할 수 있음. <br>
                     만약 현재 시퀀스의 가장 높은 값을 알고 싶으면 SELECT SEQ_topicPRIM.CURRVAL FROM DUAL; 을 명령하면 알 수 있음. <br>
                     SELECT SEQ_topicPRIM.CURRVAL FROM topicPRIM; 을 사용해도 알 수 있지만 시퀀스의 값 만큼의 행이 생성되므로 그냥 DUAL이 편하다.
+                
+                    <br>
+                    <br>
+
+                    <strong>시퀀스 생성 명령문</strong>  <br>
+                    CREATE SEQUENCE [시퀀스 명] <br>
+                    INCREMENT BY [증감숫자]  -- 시퀀스 증가값.(기본값 1), <br>
+                    START WITH [시작숫자]    -- 시퀀스 시작값.<br>
+                    MAXVALUE [최대값] -- 시퀀스 최대값.(생략시 최대값 무한대 NOMAXVALUE)<br>
+                    MINVALUE [최소값] -- 시퀀스 최소값.(생략시 최소값 무한대 NOMINVALUE)<br>
+                    CYCLE OR NOCYCLE  -- 기본값은 NOCYCLE 입니다. CYCLE로 지정하면 최대값에 도달했을때 다시 최소값부터 시작합니다.<br>
+                    <br>
+                    <strong>시퀀스 삭제 명령문</strong> <br>
+                    DROP SEQUENCE [시퀀스명];
                 </p>
             </div>
 
@@ -337,11 +355,127 @@
                     (column.NAME);<br>
                 </p>
             </div>
+
+            <div class="tag2">
+                <h2>SELECT 탐색</h2>
+                <br>
+                <table>
+                    <th>목표</th>
+                    <th>명령어</th>
+                    <tr>
+                        <td>00년00월00일 이후</td>
+                        <td>{atom.name} > '00/00/00';</td>
+                    </tr>
+                    <tr>
+                        <td>구간 설정 여러개</td>
+                        <td>{atom.name} >= AND {atom.name} <= , BWTWEEN 000 AND 000;</td>
+                    </tr>
+                    <tr>
+                        <td>번호가 000,000,000 인</td>
+                        <td>{atom.name} IN (000,000,000);</td>
+                    </tr>
+                    <tr>
+                        <td>~를 제외한</td>
+                        <td>{atom.name} NOT IN (000,000,000);</td>
+                    </tr>
+                    <tr>
+                        <td>~년도</td>
+                        <td>{atom.name} LIKE ('05%');</td>
+                    </tr>
+                    <tr>
+                        <td>~가 없는</td>
+                        <td>~가 0인 : {atom.name} IS NULL;</td>
+                    </tr>
+                    <tr>
+                        <td>조건이 여러개인 경우</td>
+                        <td>AND, OR을 적절히 사용</td>
+                    </tr>
+                    <tr>
+                        <td>a,b,c 가 아닌</td>
+                        <td>{atom.name} NOT IN ('a','b','c');</td>
+                    </tr>
+                    <tr>
+                        <td>~사이에 포함되지 않는</td>
+                        <td>{atom.name} NOT BETWEEN 000 AND 000;</td>
+                    </tr>
+                    <tr>
+                        <td>~사이에 포함되는</td>
+                        <td>{atom.name} BETWEEN 000 and 000;</td>
+                    </tr>
+                    <tr>
+                        <td>소문자로 검색 또는 출력</td>
+                        <td>LOWER( {atom.name} );</td>
+                    </tr>
+                    <tr>
+                        <td>대문자로 검색 또는 출력</td>
+                        <td>UPPER( {atom.name} );</td>
+                    </tr>
+                    <tr>
+                        <td>a, b 합치기</td>
+                        <td>a || b 만약 중간에 공백이 필요하면 ' '을 넣어준다.</td>
+                    </tr>
+                    <tr>
+                        <td>문자열 'a'보다 크고 'b'보다 작은 것 검색</td>
+                        <td>SUBSTR( {atom.name},1,1 ) > 'a' AND SUBSTR( {atom.name},1,1) < 'b'</td>
+                    </tr>
+                    <tr>
+                        <td>이름순으로 정렬, 오름차순</td>
+                        <td>ORDER BY {atom.name};</td>
+                    </tr>
+                    <tr>
+                        <td>~의 길이 구하기</td>
+                        <td>LENGTH({atom.name});</td>
+                    </tr>
+                    <tr>
+                        <td>~중 문자열 'a'의 위치 출력</td>
+                        <td>SELECT ~ {atom.name}, INSTR({atom.name},'a',1,1) FROM ~ </td>
+                    </tr>
+                </table>
+                <br>
+                <p>
+                    SELECT 대상이 숫자인 경우
+                    SELECT AVG({atom.name}), MAX({atom.name}), MIN, SUM 등 사칙연산의 사용이 가능하다.
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>ORDER BY</h2>
+                <br>
+                <p>
+                    SELECT A <br>
+                    FROM B  <br>
+                    ORDER BY {atom.name} ASC 또는 DESC (작은것부터, 큰것부터) <br>
+                    <br>
+                    ORDER BY {atom.name1} ASC, {atom.name2} DESC; 처럼 다양하게 2개, 3개씩 합쳐서 사용 가능
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>GROUP BY</h2>
+                <br>
+                <p>
+                    <div class="groupbyChart"></div>
+                    <br>
+                    SELECT [GROUP BY 절에 지정된 컬럼1] [GROUP BY별로 집계할 값]<br>
+                    FROM [테이블 명]<br>
+                    GROUP BY [ 그룹으로 묶을 컬럼 값 ]<br>
+                    <br>
+                    <strong>예시, 학급별 성적</strong>  <br>
+                    SELECT CLASS, SUM(SCORE) <br>
+                    FROM TBL_REPORT_CARD<br>
+                    GROUP BY CLASS;
+                    <br>
+                    <br>
+                    <strong class="stSt">HAVING BY</strong> <br>
+                    GROUP BY로 집계된 값에서 WHERE을 추가한다고 생각하면 된다. 만약 GROUP BY로 SUM을 집계 했다면 그 SUM에 크거나 작거나 하는 수식 조건문을 추가하는 것. GROUP BY 만의 WHERE.
+                </p>
+            </div>
         </div>
     </section>
 
     <footer>
-        <h1>ORACLE DATABASE</h1>
+        <!-- <h1>ORACLE DATABASE</h1> -->
+        <div class="footerLogo"></div>
     </footer>
 </body>
 </html>
