@@ -34,6 +34,17 @@ body {
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    #weather {
+        position: absolute;
+        top: 40px;
+        left: 30px;
+        font: bold 18px/1.5 "poppins";
+        letter-spacing: 1.5px;
+        border-bottom: 3px solid crimson;
+        padding-bottom: 5px;
+        color: #3A3632;
+    }
 }
 
 .headerBot {
