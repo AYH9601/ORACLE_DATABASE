@@ -7,11 +7,17 @@
     <title>ORACLE DATABASE Notes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/favicon.ico">
+    <script defer src="JS/weather.js"></script>
 </head>
 <body>
     <header class="headerTop">
         <!-- <h1>ORACLE DATABASE</h1> -->
         <div class="logo"></div>
+        <div id="weather">
+            <span></span> &
+            <span></span>°C <br>
+            <span></span>
+        </div>
     </header>
 
     <header class="headerBot">
@@ -438,6 +444,10 @@
                     <tr>
                         <td>~중 문자열 'a'의 위치 출력</td>
                         <td>SELECT ~ {atom.name}, INSTR({atom.name},'a',1,1) FROM ~ </td>
+                    </tr>
+                    <tr>
+                        <td>전화번호 표현패턴 정규식</td>
+                        <td>^010-\d{3,4}-\d{4}, 4글자 = d{4}, 3글자 또는 4글자 d{3,4}$</td>
                     </tr>
                 </table>
                 <br>
