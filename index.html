@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORACLE DATABASE Diary</title>
+    <title>ORACLE DATABASE Notes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/favicon.ico">
 </head>
@@ -307,6 +307,34 @@
                     하나의 트랜잭션을 잘게 분할하여 저장하는 기능.<br>
                     하나의 트랜잭션에서 여러개를 저장 가능하나 S1 지점으로 롤백을 했을경우 S2지점은 자동으로 삭제된다. <br>
                     만약 전체 ROLLBACK을 할 경우 SAVEPOINT는 전체가 삭제된다. <br>
+                </p>
+            </div>
+        </div>
+
+        <div class="tag1 220628">
+            <h1>220628</h1>
+
+            <div class="tag2">
+                <h2 class="redline">Column. 열. 세로</h2>
+                <br>
+                <p>
+                    <strong>컬럼추가, 열 추가</strong><br>
+                    ALTER TABLE [table.name] ADD [column.name] [자료형] DEFAULT [기본값] NOT NULL;
+                    <br>
+                    <br>
+                    <strong>컬럼삭제, 열 삭제</strong><br>
+                    ALTER TABLE [table.name] DROP COLUMN [column.name];
+                </p>
+            </div>
+
+            <div class="tag2">
+                <h2>PK 추가</h2>
+                <br>
+                <p>
+                    이미 존재하는 column을 PK로 바꾸는 것. 고유값으로 바꾸는 기능.<br>
+                    ALTER TABLE [table.name] <br>
+                    ADD CONSTRAINT [PK.name] PRIMARY KEY <br>
+                    (column.NAME);<br>
                 </p>
             </div>
         </div>
