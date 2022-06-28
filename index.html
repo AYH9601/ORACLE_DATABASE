@@ -16,6 +16,7 @@
 
     <header class="headerBot">
         <a href="https://chlee21.tistory.com/69" target="_blank">WORK</a>
+        <a href="https://mine-it-record.tistory.com/category/DBMS/ORACLE" target="_blank">CENTER</a>
     </header>
 
     <section>
@@ -379,12 +380,20 @@
                         <td>{atom.name} NOT IN (000,000,000);</td>
                     </tr>
                     <tr>
-                        <td>~년도</td>
+                        <td>~로 시작하는 (~년도, ~글자로 시작)</td>
                         <td>{atom.name} LIKE ('05%');</td>
                     </tr>
                     <tr>
+                        <td>~로 시작하는걸 제외한</td>
+                        <td>{atom.name} NOT LIKE ('05%');</td>
+                    </tr>
+                    <tr>
+                        <td>~가 들어간</td>
+                        <td>{atom.name} LIKE ('%05%');</td>
+                    </tr>
+                    <tr>
                         <td>~가 없는</td>
-                        <td>~가 0인 : {atom.name} IS NULL;</td>
+                        <td>~가 0인 : {atom.name} IS NULL; 얘는 꼭 IS랑 같이써야함.</td>
                     </tr>
                     <tr>
                         <td>조건이 여러개인 경우</td>
@@ -460,7 +469,7 @@
                     FROM [테이블 명]<br>
                     GROUP BY [ 그룹으로 묶을 컬럼 값 ]<br>
                     <br>
-                    <strong>예시, 학급별 성적</strong>  <br>
+                    <strong>예시, 학급별 성적집계</strong>  <br>
                     SELECT CLASS, SUM(SCORE) <br>
                     FROM TBL_REPORT_CARD<br>
                     GROUP BY CLASS;

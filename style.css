@@ -50,6 +50,7 @@ body {
   color: #fff;
   font: bold 20px/80px "poppins";
   transition: 0.2s;
+  margin-right: 40px;
 }
 .headerBot a:hover {
   color: crimson;
