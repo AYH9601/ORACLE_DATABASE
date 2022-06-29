@@ -1,0 +1,211 @@
+--https://zimmyrabbit.tistory.com/6?category=916366
+--Chapter2.5
+--1번. EMP 테이블을 사용하여 다음과 같이 사원 이름(ENAME)이 S로 끝나는 사원 데이터를 모두 출력하는 SQL문을 작성해 보세요.
+SELECT
+    *
+FROM
+    EMPLOYEE_FOLDER
+WHERE
+    EMPLOYEE_NAME LIKE ('%S');
+    
+
+--2번. EMP 테이블을 사용하여 30번 부서(DEPTNO)에서 근무하고 있는 사원 중에 직책(JOB)이 SALESMAN인 사원의 사원번호, 이름, 직책, 급여, 부서번호를 출력하는 SQL문을 작성해 보세요.
+SELECT
+    E.EMP_ID,E.EMP_NAME, E.JOB, E.SALALY, E.DEP_ID
+FROM
+    EMP_FOLDER E
+WHERE
+    E.DEP_ID = 30 AND
+    E.JOB = 'SALESMAN';
+
+
+--3번. EMP 테이블을 사용하여 20번, 30번 부서에 근무하고 있는 사원 중 급여(SAL)가 2000초과인 사원을 다음 두 가지 방식의 SELECT문을 사용하여 사원 번호, 이름, 급여, 부서번호를 출력하는 SQL문을 작성해보세요.
+SELECT 
+    E.EMP_ID, E.EMP_NAME, E.SALALY, E.DEP_ID
+FROM
+    EMP_FOLDER E
+WHERE
+    E.DEP_ID IN (20,30) AND
+    E.SALALY > 2000;
+    
+    
+--4번. NOT BETWEEN A AND B 연산자를 쓰지않고, 급여(SAL) 열 값이 2000이상 3000이하 범위 이외의 값을 가진 데이터만 출력하도록 SQL문을 작성해 보세요.
+SELECT
+    *
+FROM
+    EMP_FOLDER
+WHERE
+    SALALY <= 2000 OR
+    SALALY >= 3000;
+    
+    
+--5번. 사원 이름에 E가 포함되어 있는 30번 부서의 사원 중 급여가 1000~2000사이가 아닌 사원 이름, 사원 번호, 급여, 부서번호를 출력하는 SQL문을 작성해 보세요.
+SELECT
+    E.EMP_NAME, E.EMP_ID, E.SALALY, E.DEP_ID
+FROM
+    EMP_FOLDER E
+WHERE
+    E.DEP_ID = 30 AND
+    E.EMP_NAME LIKE ('%E%') AND
+    E.SALALY > 2000 OR
+    E.SALALY < 1000;
+    
+    
+--6번. 추가 수당이 존재하지 않고 상급자가 있고 직책이 MANAGER, CLERK인 사원 중에서 사원이름의 두 번째 글자가 'L'이 아닌 사원의 정보를 출력하는 SQL문을 작성해 보세요.
+SELECT
+    *
+FROM
+    EMP_FOLDER E
+WHERE
+    E.JOB IN 'MANAGER, CLERK'
+    E.EXTRA_SAL IS NULL AND
+    E.MANAGER_ID IS NOT NULL AND
+    E.EMP_NAME NOT LIKE ('_L%');
+    
+--CHAPTER2.7-----------------------------------------------
+--https://zimmyrabbit.tistory.com/6?category=916366
+--1번
+SELECT
+    E.DEP_ID, AVG(E.SALALY), MAX(E.SALALY), MIN(E.SALALY), COUNT(E.EMP_ID)
+FROM
+    EMP_FOLDER E
+GROUP BY
+    E.DEP_ID
+    
+    
+--2번
+SELECT
+    E.JOB, COUNT(E.EMP_ID)
+FROM
+    EMP_FOLDER E
+GROUP BY
+    E.JOB
+HAVING
+    COUNT(E.EMP_ID) >= 3;
+    
+    
+--3번
+SELECT
+    E.HIREDATE, E.DEP_ID, COUNT(EMP_ID)
+FROM
+    EMP_FOLDER E
+GROUP BY
+    E.HIREDATE, E.DEP_ID;
+
+    
+--4번
+
+
+--CHAPTER2.8-----------------------
+
+--1번. 급여(SAL)가 2000초과인 사원들의 부서 정보, 사원 정보를 그림과 같이 출력해보세요.
+SELECT
+    D.DEP_ID, D.DEP_NO, E.EMP_ID, E.EMP_NAME, E.SAL
+FROM
+    EMP_FOLDER E, DEP_FOLDER D
+WHERE
+    E.DEP_ID = D.DEP_ID AND
+    E.SAL > 2000
+ORDER BY
+    D.DEP_ID DESC;
+    
+    
+--2번. 그림과 같이 각 부서별 평균 급여, 최대 급여, 최소 급여, 사원수를 출력해 보세요.
+SELECT
+    D.DEP_ID, D.DEP_NAME, AVG(E.SAL), MAX(E.SAL), MIN(E.SAL), COUNT(E.EMP_ID)
+FROM
+    DEP_FOLDER D, EMP_FOLDER E
+WHERE
+    D.DEP_ID = E.DEP_ID
+GROUP BY
+    D.DEP_ID, D.DEP_NAME
+    
+    
+--3번. 모든 부서 정보와 사원 정보를 그림과 같이 부서 번호, 사원 이름 순으로 정렬하여 출력해보세요.
+SELECT
+    D.DEP_ID, D.DEP_NAME, E.EMP_ID, E.EMP_NAME, E.JOB, E.SAL
+FROM
+    DEP_FOLDER D, EMP_FOLDER E
+WHERE
+    D.DEP_ID = E.DEP_ID
+GROUP BY
+    D.DEP_ID, E.EMP_NAME
+ORDER BY
+    D.DEP_ID ASC, E.EMP_NAME ASC;
+    
+    
+--4번. 그림과 같이 모든 부서 정보, 사원 정보, 급여 등급 정보, 각 사원의 직속 상관의 정보를 부서 번호, 사원 번호, 순서로 정렬하여 출력해 보세요.
+SELECT
+    D.DEP_ID, D.DEP_NAME, E.EMP_ID, E.EMP_NAME, E.EMP_MANAGER, E.EMP_SAL, E.DEP_ID,
+    
+    
+    
+--CHAPTER 2.9 ---------------------------------
+
+--1번. 전체 사원 중 ALLEN과 같은 직책(JOB)인 사원들의 사원 정보, 부서 정보를 출력하는 SQL문을 작성하세요.
+SELECT 
+        E.JOB, E.EMP_ID, E.EMP_NAME, E.EMP_SAL, D.DEP_ID, D.DEP_NAME
+FROM
+    EMP_FOLDER E, DEP_FOLDER D
+WHERE
+    E.DEP_ID = D.DEP_ID AND
+    E.JOB = (
+        SELECT
+            E.JOB
+        FROM
+            EMP_FOLDER E
+        WHERE
+            E.EMP_NAME = 'ALLEN');
+            
+   
+--2번. 전체 사원의 평균 급여(SAL)보다 높은 급여를 받는 사원들의 사원 정보, 부서 정보, 급여 등을 정보를 출력하는 SQL문을 작성하세요
+SELECT
+    E.EMP_ID, E.EMP_NAME, D.DEP_NAME, E.EMP_HIREDATE, D.DEP_LOCATION, E.EMP_SAL, S.GRADE
+FROM
+    EMP_FOLDER E, DEP_FOLDER D, SALGRADE S
+WHERE
+    E.DEP_ID = D.DEP_ID AND
+    E.EMP_SAL BETWEEN S.LOWSAL AND S.HIGHSAL AND
+    E.EMP_SAL > (
+        SELECT 
+            AVG(E.EMP_SAL)
+        FROM
+            EMP_FOLDER E);
+ORDER BY
+    E.EMP_SAL DESC, E.EMP_ID ASC;
+   
+        
+--3번. 10번 부서에 근무하는 사원 중 30번 부서에는 존재하지 않는 직책을 가진 사원들의 사원 정보, 부서 정보를 출력하는 SQL문을 작성하세요.
+SELECT
+    E.EMP_ID, E.EMP_NAME, E.EMP_JOB, D.DEP_ID, D.DEP_NAME, D.DEP_LOCATION
+FROM
+    EMP_FOLDER E, DEP_FOLDER D
+WHERE
+    E.EMP_ID = D.DEP_ID AND
+    E.EMP_ID = 10 AND
+    JOB NOT IN (
+        SELECT
+            DISTINCT E.EMP_JOB
+        FROM
+            EMP_FOLDER E
+        WHERE
+            E.DEP_ID = 30); 
+            
+
+
+--4번.직책이 SALESMAN인 사람들의 최고 급여보다 높은 급여를 받는 사원들의 사원 정보, 급여 등급 정보를 출력하는 SQL문을 작성하세요
+SELECT
+    E.EMP_ID, E.EMP_NAME, E.EMP_SAL, S.GRADE
+FROM
+    EMP_FOLDER E, SALGRADE S
+WHERE
+    E.EMP_SAL BETWEEN S.LOWSAL AND S.HIGHSAL AND
+    E.EMP_SAL > (
+        SELECT
+            MAX(E.EMP_SAL)
+        FROM
+            EMP_FOLDER E
+        WHERE
+            E.EMP_JOB = 'SALESMAN')
+ORDER BY
+    E.EMP_ID;
