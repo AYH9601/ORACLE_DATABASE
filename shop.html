@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORACLE DATABASE Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico">
+    <script defer src="JS/weather.js"></script>
+</head>
+<body>
+    <header class="headerTop">
+        <!-- <h1>ORACLE DATABASE</h1> -->
+        <div class="logo"></div>
+        <div id="weather">
+            <span></span> &
+            <span></span>°C <br>
+            <span></span>
+        </div>
+    </header>
+
+    <header class="headerBot">
+        <a href="index.html">ORACLE</a>
+        <a href="https://chlee21.tistory.com/69" target="_blank">WORK</a>
+        <a href="https://mine-it-record.tistory.com/category/DBMS/ORACLE" target="_blank">CENTER</a>
+        <a href="shop.html">SHOP</a>
+    </header>
+
+    <section>
+        <div class="tag1">
+            <div class="tag2">
+                <h2>1. 2006년도에 고용된 모든 사람들의 이름 및 고용일을 조회한다</h2>
+                <br>
+                <p>
+                    SELECT <br>
+                    &emsp;    NAME, HIRE_DATE<br>
+                    FROM<br>
+                    &emsp;    EMPLOYEE_FOLDER<br>
+                    WHERE<br>
+                    &emsp;    HIRE_DATE LIKE ('06%');
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- <h1>ORACLE DATABASE</h1> -->
+        <div class="footerLogo"></div>
+    </footer>
+</body>
+</html>

@@ -21,8 +21,10 @@
     </header>
 
     <header class="headerBot">
+        <a href="index.html">ORACLE</a>
         <a href="https://chlee21.tistory.com/69" target="_blank">WORK</a>
         <a href="https://mine-it-record.tistory.com/category/DBMS/ORACLE" target="_blank">CENTER</a>
+        <a href="shop.html">SHOP</a>
     </header>
 
     <section>
@@ -95,6 +97,15 @@
             </div>
 
             <div class="tag2">
+                <h2>SQL</h2>
+                <br>
+                <p>
+                    Structured Query Language.<br>
+                    구조화된 정보를 처리하도록 요청하는 컴퓨팅 언어.
+                </p>
+            </div>
+
+            <div class="tag2">
                 <h2 class="redline">행 추가, CREATE, INSERT</h2>
                 <br>
                 <p>
@@ -104,15 +115,6 @@
                     &emsp;   (1,'ORACLE','ORACLE is ...',SYSDATE); <br>
                     <br>
                     이후 commit; 을 해줘야함. commit을 하지 않으면 행을 몇개를 추가하든 실제로 반영이 되지는 않음. 깃허브의 psuh를 생각해보자.
-                </p>
-            </div>
-
-            <div class="tag2">
-                <h2>SQL</h2>
-                <br>
-                <p>
-                    Structured Query Language.<br>
-                    구조화된 정보를 처리하도록 요청하는 컴퓨팅 언어.
                 </p>
             </div>
 
@@ -282,7 +284,7 @@
             </div>
 
             <div class="tag2">
-                <h2>테이블 column 추가, ADD</h2>
+                <h2 class="redline">테이블 column 추가, ADD</h2>
                 <br>
                 <p>
                     테이블 내의 column (열) 을 추가하는 명령문. <br>
@@ -291,7 +293,7 @@
             </div>
 
             <div class="tag2">
-                <h2>테이블 column 수정, MODIFY</h2>
+                <h2 class="redline">테이블 column 수정, MODIFY</h2>
                 <br>
                 <p>
                     테이블 내부 데이터의 자료형을 수정하는 명령문. <br>
@@ -300,7 +302,7 @@
             </div>
 
             <div class="tag2">
-                <h2>테이블 column 삭제, DROP</h2>
+                <h2 class="redline">테이블 column 삭제, DROP</h2>
                 <br>
                 <p>
                     테이블 내의 column (열)을 삭제하는 명령문. <br>
@@ -343,6 +345,7 @@
                 <h2 class="redline">Column. 열. 세로</h2>
                 <br>
                 <p>
+                    위 column 부분의 본래 명령문. <br>
                     <strong>컬럼추가, 열 추가</strong><br>
                     ALTER TABLE [table.name] ADD [column.name] [자료형] DEFAULT [기본값] NOT NULL;
                     <br>
@@ -375,7 +378,7 @@
                     </tr>
                     <tr>
                         <td>구간 설정 여러개</td>
-                        <td>{atom.name} >= AND {atom.name} <= , BWTWEEN 000 AND 000;</td>
+                        <td>{atom.name} >= AND {atom.name} <= , BETWEEN 000 AND 000;</td>
                     </tr>
                     <tr>
                         <td>번호가 000,000,000 인</td>
@@ -398,8 +401,12 @@
                         <td>{atom.name} LIKE ('%05%');</td>
                     </tr>
                     <tr>
-                        <td>~가 없는</td>
-                        <td>~가 0인 : {atom.name} IS NULL; 얘는 꼭 IS랑 같이써야함.</td>
+                        <td>~가 없는, ~가 0인</td>
+                        <td>{atom.name} IS NULL; 얘는 꼭 IS랑 같이써야함.</td>
+                    </tr>
+                    <tr>
+                        <td>~가 있는, ~가 1인</td>
+                        <td>{atom.name} IS NOT NULL;</td>
                     </tr>
                     <tr>
                         <td>조건이 여러개인 경우</td>
@@ -452,8 +459,8 @@
                 </table>
                 <br>
                 <p>
-                    SELECT 대상이 숫자인 경우
-                    SELECT AVG({atom.name}), MAX({atom.name}), MIN, SUM 등 사칙연산의 사용이 가능하다.
+                    SELECT 대상이 숫자인 경우, SELECT AVG({atom.name}), MAX({atom.name}), MIN, SUM 등 사칙연산의 사용이 가능하다. <br>
+                    MIN, MAX는 모든 자료형에 사용이 가능하다.
                 </p>
             </div>
 
@@ -488,6 +495,14 @@
                     <strong class="stSt">HAVING BY</strong> <br>
                     GROUP BY로 집계된 값에서 WHERE을 추가한다고 생각하면 된다. 만약 GROUP BY로 SUM을 집계 했다면 그 SUM에 크거나 작거나 하는 수식 조건문을 추가하는 것. GROUP BY 만의 WHERE.
                 </p>
+            </div>
+        </div>
+
+        <div class="tag1 220629">
+            <h1>220629</h1>
+
+            <div class="tag2">
+
             </div>
         </div>
     </section>
