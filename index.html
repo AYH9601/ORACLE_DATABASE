@@ -378,7 +378,7 @@
                     </tr>
                     <tr>
                         <td>구간 설정 여러개</td>
-                        <td>{atom.name} >= AND {atom.name} <= , BETWEEN 000 AND 000;</td>
+                        <td>{atom.name} >= AND {atom.name} <= , {atom.name} BETWEEN 000 AND 000;</td>
                     </tr>
                     <tr>
                         <td>번호가 000,000,000 인</td>
@@ -395,6 +395,10 @@
                     <tr>
                         <td>~로 시작하는걸 제외한</td>
                         <td>{atom.name} NOT LIKE ('05%');</td>
+                    </tr>
+                    <tr>
+                        <td>~로 끝나는</td>
+                        <td>{atom.name} LIKE ('%05');</td>
                     </tr>
                     <tr>
                         <td>~가 들어간</td>
@@ -492,7 +496,7 @@
                     GROUP BY CLASS;
                     <br>
                     <br>
-                    <strong class="stSt">HAVING BY</strong> <br>
+                    <strong class="stSt">HAVING</strong> <br>
                     GROUP BY로 집계된 값에서 WHERE을 추가한다고 생각하면 된다. 만약 GROUP BY로 SUM을 집계 했다면 그 SUM에 크거나 작거나 하는 수식 조건문을 추가하는 것. GROUP BY 만의 WHERE.
                     <br>
                     <strong class="redline">복잡한 명령어를 다루기 좋으며, 한번 집합시킨 데이터 안에서 집합을 한번 더 걸어서 더욱더 복잡한 집합을 걸 수 있다.</strong> 
