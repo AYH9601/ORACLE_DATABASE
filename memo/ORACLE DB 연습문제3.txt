@@ -116,3 +116,177 @@ FROM
 WHERE
     ANNSAL NOT IN (2500,3500,7000) AND
     E.EMP_JOB IN ('SA_REP','ST_CLERK');
+
+
+https://pg-titannia.tistory.com/14?category=983219
+--1번
+SELECT 
+    DISTINCT E.EMP_JOB, D.DEP_ID
+FROM
+    EMP_FOLDER E, DEP_FOLDER D
+WHERE
+    D.DEP_ID IN (30,90)
+ORDER BY
+    E.EMP_JOB ASC;
+    
+--2번
+SELECT
+    E.EMP_NAME, D.DEP_NAME, L.LOCATION_ID, L.LOCATION_CITY_NAME
+FROM
+    EMP_FOLDER E, LOCATION_FOLDER L, DEP_FOLDER D
+WHERE
+    E.DEP_ID = D.DEP_ID AND
+    D.LOCATION_ID = L.LOCATION_ID AND
+    E.COMM IS NOT NULL;
+    
+    
+--3번
+SELECT
+    E.EMP_NAME, E.HIREDATE
+FROM
+    EMP_FOLDER E, EMP_FOLDER M
+WHERE
+    E.MANAGER_ID = M.EMP_ID AND
+    E.HIREDATE < M.HIREDATE
+
+https://pg-titannia.tistory.com/16?category=983219
+
+--GROUP BY------------------------------    
+--1번
+SELECT
+    COUNT(DISTINCT E.MANAGER_ID)
+FROM
+    EMP_FOLDER E
+    
+    
+--2번
+SELECT
+    MAX(E.EMP_SAL)-MIN(E.EMP_SAL)
+FROM
+    EMP_FOLDER E
+
+
+https://pg-titannia.tistory.com/19?category=983219
+
+--1번
+SELECT
+    E.EMP_ID, E.EMP_HIREDATE
+FROM
+    EMP_FOLDER E
+WHERE
+    E.DEP_ID IN (
+        SELECT
+            E.DEP_ID
+        FROM
+            EMP_FOLDER E
+        WHERE
+            E.EMP_NAME = 'ZLOTKEY') AND
+    E.EMP_NAME <> 'ZLOTKEY';
+
+
+--2번
+SELECT
+    E.EMP_ID, E.EMP_NAME
+FROM
+    EMP_FOLDER E
+WHERE
+    E.EMP_SAL > (
+        SELECT
+            AVG(E.EMP_SAL)
+        FROM
+            EMP_FOLDER E);
+            
+    
+--3번
+SELECT
+    E.EMP_ID, E.EMP_NAME
+FROM
+    EMP_FOLDER E
+WHERE 
+    E.DEP_ID = (
+        SELECT
+            E.DEP_ID
+        FROM
+            EMP_FOLDER E
+        WHERE
+            E.EMP_NAME LIKE ('%u%');
+            
+            
+--4번
+SELECT
+    E.EMP_NAME, D.DEP_NAME, L.LOC_ID
+FROM
+    EMP_FOLDER E, DEP_FOLDER D, LOC_FOLDER L
+WHERE
+    E.DEP_ID = D.DEP_ID AND
+    E.COMM IS NULL AND
+    D.DEP_LOC_ID IN (
+        SELECT
+            L.LOC_ID
+        FROM
+            LOC_FOLDER L
+        WHERE
+            L.LOC_NAME = 'SEATTLE');
+            
+            
+--5번
+SELECT
+    E.EMP_NAME, E.EMP_HIREDATE, 
+FROM
+    EMP_FOLDER E
+WHERE
+    E.EMP_HIREDATE > (
+        SELECT
+            E.EMP_HIREDATE
+        FROM
+            EMP_FOLDER E
+        WHERE
+            E.EMP_NAME = 'DAVIES');
+ORDER BY
+    E.EMP_HIREDATE DESC;
+            
+
+--6번. King을 매니저로 두고 있는 모든 사원들의 이름 및 급여를 출력하시오.
+SELECT
+    E.EMP_NAME, E.EMP_SAL
+FROM
+    EMP_FOLDER E
+WHERE
+    E.EMP_MANAGER_NAME IN ('KING');
+    
+--답안지는 이렇게 나와있는데 왜 굳이 KING을 바로 뽑지 않고?
+WHERE
+    E.EMP_MANAGER_NAME IN (
+        SELECT
+            E.EMP_NAME
+        FROM
+            E.EMP_FOLDER
+        WHERE
+            E.EMP_NAME = 'KING');
+            
+            
+--7번
+--이름에 U가 있는 사원들이 근무하는 부서에서 근무하는 사원들의 정보를 출력
+--근데 여기서 회사전체 평균급여보다 더 많이 받는 사원들에대한 정보만 출력할것.
+--
+--조건1. 부서가 일치할것.
+--조건2. 그 부서의 사원들 이름에 U가 들어갈것. SUB 1.
+--조건3. 조건 1,2를 만족하는 사람들 중 평균급여보다 많이받는 사원들 정보만 출력 SUB 2.
+
+SELECT
+	E.EMP_ID, E.EMP_NAME, E.EMP_SAL
+FROM
+	EMP_FOLDER E
+WHERE
+	E.DEP_ID IN (
+		SELECT
+			E.DEP_ID
+		FROM
+			EMP_FOLDER
+		WHERE
+			E.EMP_NAME LIKE ('%u%') AND
+			E.EMP_SAL > (
+				SELECT
+					AVG(E.EMP_SAL)
+				FROM
+					EMP_FOLDER E));
