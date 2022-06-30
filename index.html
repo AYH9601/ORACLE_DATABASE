@@ -296,8 +296,13 @@
                 <h2 class="redline">테이블 column 수정, MODIFY</h2>
                 <br>
                 <p>
+                    sql developer의 GUI를 활용해서 수정하는것이 제일 편함. <br>
+                    <br>
                     테이블 내부 데이터의 자료형을 수정하는 명령문. <br>
-                    ALTER TABLE [MEMBER] MODIFY [ID] [NVARCHAR2 (50)];
+                    ALTER TABLE [MEMBER] MODIFY [ID] [NVARCHAR2 (50)]; <br>
+                    <br>
+                    테이블 내부 데이터의 이름을 수정하는 명령문. <br>
+                    ALTER TABLE [TABLE.NAME] RENAME COLUMN [NAME] TO [NEW NAME];
                 </p>
             </div>
 
@@ -306,7 +311,10 @@
                 <br>
                 <p>
                     테이블 내의 column (열)을 삭제하는 명령문. <br>
-                    ALTER TABLE [MEMBER] DROP COLUMN [AGE];
+                    ALTER TABLE [MEMBER] DROP COLUMN [AGE]; <br>
+                    <br>
+                    테이블 통째로 삭제할 때는. <br>
+                    DROP TABLE [TABLE.NAME];
                 </p>
             </div>
 
