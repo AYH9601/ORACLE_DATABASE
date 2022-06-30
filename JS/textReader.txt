@@ -1,0 +1,29 @@
+{/* <button _onclick="openTextFile()">Open</button>
+<div id='output'>...</div>
+<script>
+function openTextFile() {
+    var input = document.createElement("input");
+
+    input.type = "file";
+    input.accept = "text/plain"; // 확장자가 xxx, yyy 일때, ".xxx, .yyy"
+
+    input.onchange = function (event) {
+        processFile(event.target.files[0]);
+    };
+
+    input.click();
+}
+
+function processFile(file) {
+    var reader = new FileReader();
+
+    reader.onload = function () {
+            var ddd = reader.result.split("\n"); // 파일에 입력된 숫자를 읽어와 배열에 저장.
+        output.innerText = reader.result; // 그냥 파일에서 읽어온 내용을 뿌려 줍니다.
+        console.log(ddd); // 이 배열 갖고 합계 내어 뿌려 주면 됩니다.
+        
+    };
+
+    reader.readAsText(file, /* optional */ "euc-kr");
+}
+</script> */}
