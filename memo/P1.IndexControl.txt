@@ -1,39 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORACLE DATABASE Notes</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.ico">
-    <script defer src="JS/weather.js"></script>
-</head>
-<body>
-    <header class="headerTop">
-        <!-- <h1>ORACLE DATABASE</h1> -->
-        <div class="logo"></div>
-        <div id="weather">
-            <span></span> &
-            <span></span>°C <br>
-            <span></span>
-        </div>
-    </header>
-
-    <header class="headerBot">
-        <a href="index.html">ORACLE</a>
-        <a href="https://chlee21.tistory.com/69" target="_blank">WORK</a>
-        <a href="https://mine-it-record.tistory.com/category/DBMS/ORACLE" target="_blank">CENTER</a>
-        <a href="shop.html">SHOP</a>
-    </header>
-
-    <section>
-        <div class="tag1">
-            <div class="tag2">
-                <h2>구조 둘러보기</h2>
-                <br>
-                <p>
-                    <pre>
 수정금지. 구조파악만 할 것.
 
 Java Resources > src >
@@ -62,6 +26,10 @@ kr.or.kira.{domain, dao, ctr, service}
 지사정보
 mv.addObject("sctName");
 mv.addObject("list", branchList());
+
+
+
+
 
 
 
@@ -284,15 +252,3 @@ AdmProgAuthDAO.java
 
 관리자프로그램 권한 관리 Controller
 kr.or.kira.ctr.menu 폴더 내에 6개의 CTR.java 파일 존재
-                    </pre>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <!-- <h1>ORACLE DATABASE</h1> -->
-        <div class="footerLogo"></div>
-    </footer>
-</body>
-</html>
