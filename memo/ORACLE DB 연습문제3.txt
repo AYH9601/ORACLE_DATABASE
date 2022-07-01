@@ -290,3 +290,4 @@ WHERE
 					AVG(E.EMP_SAL)
 				FROM
 					EMP_FOLDER E));
+

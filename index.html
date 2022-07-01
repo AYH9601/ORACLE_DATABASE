@@ -199,7 +199,7 @@
                     &emsp;    title VARCHAR2(50) NOT NULL, <br>
                     &emsp;    description VARCHAR2(4000) NULL, <br>
                     &emsp;    created DATE NOT NULL <br>
-                    &emsp;    CONSTRAINT PK_TOPIC PRIMARY KEY(원하는거 id, title 등등) <br>
+                    &emsp;    CONSTRAINT [primary key name] PRIMARY KEY(원하는거 id, title 등등) <br>
                     ); <br>
                     <br>
                     예를들어 id에 PK_TOPIC이라 명명한 PRIMARY KEY를 설정하면 고유한 귀속이 걸려서 같은 넘버로는 행을 추가 할 수 없다. <br>
@@ -309,8 +309,14 @@
                     테이블 내의 column (열)을 삭제하는 명령문. <br>
                     ALTER TABLE [MEMBER] DROP COLUMN [AGE]; <br>
                     <br>
+                    테이블 내에서 데이터 자체는 남아있지만 display:none 처럼 값을 숨기는 명령문. <br>
+                    ALTER TABLE [TABLE.name] set unused (column.name); <br>
+                    <br>
                     테이블 통째로 삭제할 때는. <br>
-                    DROP TABLE [TABLE.NAME];
+                    DROP TABLE [TABLE.NAME]; <br>
+                    <br>
+                    unused 상태의 모든 column을 삭제하는 명령문. <br>
+                    ALTER TABLE [TABLE.NAME] DROP UNUSED COLUMNS; <br>
                 </p>
             </div>
 
@@ -343,8 +349,6 @@
         </div>
 
         <div class="tag1 220628">
-            <h1>220628</h1>
-
             <div class="tag2">
                 <h2 class="redline">Column. 열. 세로</h2>
                 <br>
