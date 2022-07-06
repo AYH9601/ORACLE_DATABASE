@@ -9,6 +9,24 @@ a {text-decoration: none;}
 
 body {
     line-height: 180%;
+
+    .rightSector {
+        width: 500px;
+        height: 800px;
+        background-color: #000;
+        opacity: 0.2    ;
+        border-radius: 40px;
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        transition: 0.25s;
+
+
+        &:hover {
+            opacity: 0.5;
+            transition: 0.25s;
+        }
+    }
 }
 
 .headerTop {

@@ -9,6 +9,44 @@ a {text-decoration: none;}
 
 body {
     line-height: 180%;
+
+    .rightSector2 {
+        padding: 40px;
+        width: 500px;
+        height: 800px;
+        background-color: #000;
+        opacity: 0.2    ;
+        border-radius: 40px;
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        transition: 0.25s;
+        z-index: 1;
+
+        &:hover {
+            opacity: 0.5;
+            transition: 0.25s;
+        }
+
+        .springSector {
+            z-index: 2;
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 50px;
+            // text-align: center;
+        }
+
+        // #springFooter {
+        //     margin: 650px auto;
+        //     width: 100px;
+        //     height: 100px;
+        //     background-color: #fff;
+        //     background-image: url(./img/spring.png);
+        //     background-position: center;
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        // }
+    }
 }
 
 .headerTop {
@@ -147,6 +185,8 @@ section {
     }
 
 }
+
+
 
 footer {
     border-top: 10px solid rgb(135, 204, 79);
