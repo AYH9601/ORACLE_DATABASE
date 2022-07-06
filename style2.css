@@ -45,7 +45,7 @@ body {
   left: 30px;
   font: bold 18px/1.5 "poppins";
   letter-spacing: 1.5px;
-  border-bottom: 3px solid rgb(79, 204, 117);
+  border-bottom: 3px solid rgb(135, 204, 79);
   padding-bottom: 5px;
   color: #3A3632;
 }
@@ -53,7 +53,7 @@ body {
 .headerBot {
   width: 100%;
   height: 80px;
-  background-color: rgb(79, 204, 117);
+  background-color: rgb(135, 204, 79);
   padding: 0px 30px 0px 30px;
 }
 .headerBot a {
@@ -89,10 +89,12 @@ section {
 }
 .tag2 a {
   font: bold 20px/1 "poppins";
-  color: rgb(79, 204, 117);
+  color: rgb(135, 204, 79);
   letter-spacing: 2px;
+  transition: 0.2s;
 }
 .tag2 a:hover {
+  transition: 0.2s;
   color: darkgreen;
 }
 .tag2 h2 {
@@ -132,7 +134,7 @@ section {
 }
 
 footer {
-  border-top: 10px solid rgb(79, 204, 117);
+  border-top: 10px solid rgb(135, 204, 79);
   width: 100%;
   height: 130px;
   background-color: #fff;
