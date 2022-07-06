@@ -45,7 +45,7 @@ body {
   left: 30px;
   font: bold 18px/1.5 "poppins";
   letter-spacing: 1.5px;
-  border-bottom: 3px solid crimson;
+  border-bottom: 3px solid rgb(79, 204, 117);
   padding-bottom: 5px;
   color: #3A3632;
 }
@@ -87,9 +87,20 @@ section {
   border: 1px solid #fff;
   margin-bottom: 30px;
 }
+.tag2 a {
+  font: bold 20px/1 "poppins";
+  color: rgb(79, 204, 117);
+  letter-spacing: 2px;
+}
+.tag2 a:hover {
+  color: darkgreen;
+}
 .tag2 h2 {
   font-family: "poppins";
   font-weight: bold;
+}
+.tag2 h4 {
+  color: crimson;
 }
 .tag2 .stSt {
   font-size: 25px;
