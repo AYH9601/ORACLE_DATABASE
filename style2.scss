@@ -30,10 +30,15 @@ body {
 
         .springSector {
             z-index: 2;
-            color: #fff;
+            color: rgb(135, 204, 79);
             font-size: 30px;
-            margin-bottom: 50px;
             // text-align: center;
+            transition: 0.2s;
+
+            &:hover {
+                color: #fff;
+                transition: 0.2s;
+            }
         }
 
         // #springFooter {

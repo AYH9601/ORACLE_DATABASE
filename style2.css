@@ -35,9 +35,13 @@ body .rightSector2:hover {
 }
 body .rightSector2 .springSector {
   z-index: 2;
-  color: #fff;
+  color: rgb(135, 204, 79);
   font-size: 30px;
-  margin-bottom: 50px;
+  transition: 0.2s;
+}
+body .rightSector2 .springSector:hover {
+  color: #fff;
+  transition: 0.2s;
 }
 
 .headerTop {
