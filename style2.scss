@@ -220,8 +220,27 @@ footer {
     }
 }
 
-@media screen and (max-width: 700px){
-    .tag2 {
-        width: 100%
+@media screen and (max-width: 1200px){
+    body {
+        .rightSector2 {
+            display: none;
+        }
+
+        section {
+            .tag2 {
+                width: 80%;
+            }
+        }
     }
-};
+}
+
+@media screen and (max-width: 500px){
+
+    body {
+        section {
+            .tag2 {
+                width: 100%
+            }
+        }
+    }
+}
