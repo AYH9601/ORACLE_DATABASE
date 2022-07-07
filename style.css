@@ -17,19 +17,31 @@ body {
   line-height: 180%;
 }
 body .rightSector {
+  padding: 40px;
   width: 500px;
   height: 800px;
   background-color: #000;
-  opacity: 0.2;
+  opacity: 0.5;
   border-radius: 40px;
   position: fixed;
   top: 50px;
   right: 50px;
   transition: 0.25s;
+  border: 5px solid crimson;
 }
 body .rightSector:hover {
-  opacity: 0.5;
+  opacity: 0.8;
   transition: 0.25s;
+}
+body .rightSector .oracleSector {
+  z-index: 2;
+  color: crimson;
+  font-size: 30px;
+  transition: 0.2s;
+}
+body .rightSector .oracleSector:hover {
+  color: #fff;
+  transition: 0.2s;
 }
 
 .headerTop {
