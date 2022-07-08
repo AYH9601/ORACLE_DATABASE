@@ -224,6 +224,97 @@
                     Spring에서는 MVC는 Model2 구조로 Apllication을 만들 수 있도록 지원합니다. MVC (Model-View-Controller) 프레임 워크는 웹 응용 프로그램을 작성하기위한 완전한 기능을 갖춘 MVC를 구현합니다. MVC 프레임 워크는 전략 인터페이스를 통해 고급 구성 가능하며 JSP, Velocity, Tiles, iText 및 POI를 포함한 수많은 뷰 기술을 지원하고 있습니다.
                 </p>
             </div>
+
+            <div class="tag2">
+                <h2>전자정부프레임워크</h2>
+                <br>
+
+                <p>
+                    1. 구조
+                    <br>                    <br>
+                    1) src/main/java
+                    <br>                    <br>
+                        : java 파일이 위치한 디렉토리
+                        <br>                    <br>
+                    2) src/main/resources
+                    <br>                    <br>
+                        : 스프링 설정 파일, SQL 쿼리 설정 파일이 위치한 디렉토리
+                        <br>                    <br>
+                    3) src/main/resources/log4j2.xml
+                    <br>                    <br>
+                        : 로그 설정 파일
+                        <br>                    <br>
+                    4) Maven Dependencies
+                    <br>                    <br>
+                        : 다운받은 메이븐 라이브러리
+                        <br>                    <br>
+                    5) src/main/webapp
+                    <br>                    <br>
+                        : 메이븐 기본 디렉토리
+                        <br>                    <br>
+                    6) src/main/webapp/WEB-INF/config/action-servlet.xml
+                    <br>                    <br>
+                        : Servlet 설정 파일
+                        <br>                    <br>
+                    7) src/main/webapp/WEB-INF/jsp
+                    <br>                    <br>
+                        : 소스 파일이 위치한 디렉토리
+                        <br>                    <br>
+                    8) pom.xml
+                    <br>                    <br>
+                        : 메이븐 설정 파일
+                        <br>                    <br>
+                        <br>                    <br>
+                    2. 기능 구현 순서
+                    <br>                    <br>
+                    1) Controller
+                    <br>                    <br>
+                    2) Service
+                    <br>                    <br>
+                    3) ServiceImpl
+                    <br>                    <br>
+                    4) Mapper
+                    <br>                    <br>
+                    5) SQL.xml
+                    <br>                    <br>
+                    6) JSP
+                    <br>                    <br>
+                    <br>                    <br>
+                    3. 설정 파일 별 기능
+                    <br>                    <br>
+                    1) context - aspect.xml
+                    <br>                    <br>
+                        : AOP 관련 설정
+                        <br>                    <br>
+                    2) context-common.xml
+                    <br>                    <br>
+                        : 공통/일반적인 설정
+                        <br>                    <br>
+                    3) context-datasource.xml
+                    <br>                    <br>
+                        : DB 관련 설정
+                        <br>                    <br>
+                    4) context-idgen.xml
+                    <br>                    <br>
+                        : 임의의 id 값을 생성
+                        <br>                    <br>
+                    5) context-mapper.xml
+                    <br>                    <br>
+                        : DB 쿼리 이후, VO 객체에 대한 맵핑을 xbatis를 통해 할 수 있도록 설정
+                        <br>                    <br>
+                    6) context-sqlMap.xml
+                    <br>                    <br>
+                        : DB 쿼리 SQL 파일 위치 및 설정
+                        <br>                    <br>
+                    7) context-transaction.xml
+                    <br>                    <br>
+                        : 트랜젝션 설정
+                        <br>                    <br>
+                    8) context-validator.xml
+                    <br>                    <br>
+                        : 유효성 검사 설정
+                </p>
+            </div>
         </div>
     </section>
 
