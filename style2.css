@@ -31,7 +31,7 @@ body .rightSector2 {
   border: 5px solid rgb(135, 204, 79);
 }
 body .rightSector2:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   transition: 0.25s;
 }
 body .rightSector2 .springSector {
