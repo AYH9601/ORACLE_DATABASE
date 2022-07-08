@@ -43,6 +43,7 @@ body .rightSector2 .springSector {
 body .rightSector2 .springSector:hover {
   color: #fff;
   transition: 0.2s;
+  border-bottom: 3px solid rgb(135, 204, 79);
 }
 
 .headerTop {

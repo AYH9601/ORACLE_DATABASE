@@ -42,6 +42,7 @@ body .rightSector .oracleSector {
 body .rightSector .oracleSector:hover {
   color: #fff;
   transition: 0.2s;
+  border-bottom: 3px solid crimson;
 }
 
 .headerTop {
