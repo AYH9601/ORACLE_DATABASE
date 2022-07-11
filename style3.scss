@@ -1,0 +1,33 @@
+//reset
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Orbitron&family=Poppins:wght@200&display=swap');
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+ul, ol, li {list-style: none;}
+a {text-decoration: none;}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    h1 {
+        text-align: center;
+        color: #fff;
+        line-height: 100px;
+    }
+}
+
+
+
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+
+    h5 {
+        text-align: center;
+        line-height: 80px;
+        color: #fff;
+    }
+}
