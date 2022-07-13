@@ -38,8 +38,10 @@ section {
         .info {
             margin: 0 auto;
             width: 300px;
+            border: 1px solid #000;
+
             .phone, .mail, .insta {
-                float: left;
+                // float: left;
                 margin-bottom: 10px;
                 i {
                     font-size: 20px;

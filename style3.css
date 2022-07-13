@@ -42,9 +42,9 @@ section .profile h2 {
 section .profile .info {
   margin: 0 auto;
   width: 300px;
+  border: 1px solid #000;
 }
 section .profile .info .phone, section .profile .info .mail, section .profile .info .insta {
-  float: left;
   margin-bottom: 10px;
   text-align: center;
 }
