@@ -82,20 +82,23 @@ section {
 .tag2 {
   background-color: #fff;
   letter-spacing: 1px;
+  height: 500px;
   padding: 15px;
   width: 100%;
   border: 1px solid #fff;
   margin-bottom: 30px;
 }
 .tag2 a {
+  margin-bottom: 30px;
+  display: block;
   font: bold 20px/1 "poppins";
-  color: rgb(135, 204, 79);
+  color: rgb(71, 140, 219);
   letter-spacing: 2px;
   transition: 0.2s;
 }
 .tag2 a:hover {
   transition: 0.2s;
-  color: darkgreen;
+  color: crimson;
 }
 .tag2 h2 {
   text-align: center;
@@ -163,7 +166,7 @@ footer .footerLogo {
     display: none;
   }
   body section .tag2 {
-    width: 80%;
+    width: 100%;
   }
 }
 @media screen and (max-width: 500px) {

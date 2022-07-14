@@ -130,15 +130,17 @@ section {
 .tag2 {
     background-color: #fff;
     letter-spacing: 1px;
-
+    height: 500px;
     a {
+        margin-bottom: 30px;
+        display: block;
         font: bold 20px/1 "poppins";
-        color: rgb(135, 204, 79);
+        color: rgb(71, 140, 219);
         letter-spacing: 2px;
         transition: 0.2s;
         &:hover {
             transition: 0.2s;
-            color: darkgreen;
+            color: crimson;
         }
     }
 
@@ -232,7 +234,7 @@ footer {
 
         section {
             .tag2 {
-                width: 80%;
+                width: 100%;
             }
         }
     }
