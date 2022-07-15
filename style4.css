@@ -55,6 +55,7 @@ body {
   height: 80px;
   background-color: rgb(71, 140, 219);
   padding: 0px 30px 0px 30px;
+  border-bottom: 10px solid crimson;
 }
 .headerBot a {
   color: #fff;
@@ -90,7 +91,7 @@ section {
 }
 .tag2 a {
   margin-bottom: 30px;
-  display: block;
+  display: inline-block;
   font: bold 20px/1 "poppins";
   color: rgb(71, 140, 219);
   letter-spacing: 2px;
