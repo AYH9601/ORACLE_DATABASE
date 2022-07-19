@@ -288,6 +288,11 @@
                     &emsp;    LEFT JOIN author A <br>
                     &emsp;    ON T.author_id = A.id<br>
                     ; <br>
+
+                    <br>
+                    SELECT로 지정해주지않고 * 로 해놔버리면 데이터가 겹침에서 불구하고 두번 출력된다. (예를 들면 ID를 기준으로 잡아서 합쳤는데 ID가 앞에서 한번 중간에 한번 이렇게 두 번 출력됨.)
+                    <br>
+
                     <br>
                     SELECT 아래에는 보고싶은 데이터. T.id 뒤의 TOPIC_ID는 데이터 칸에 들어올 별명.  <br>
                     topic T 는 앞으로 topic을 T로 대신하겠다는 의미. 워크시트에서 T를 topic대신 쓸 수 있다.
@@ -315,7 +320,8 @@
                     ALTER TABLE [MEMBER] MODIFY [ID] [NVARCHAR2 (50)]; <br>
                     <br>
                     테이블 내부 데이터의 이름을 수정하는 명령문. <br>
-                    ALTER TABLE [TABLE.NAME] RENAME COLUMN [NAME] TO [NEW NAME];
+                    ALTER TABLE [TABLE.NAME] RENAME COLUMN [NAME] TO [NEW NAME]; <br>
+                    예를 들면 MENU를 ORDER 라는 탭 이름으로 변경하는 명령문.
                 </p>
             </div>
 
